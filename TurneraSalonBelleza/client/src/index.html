@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MiPrimerProyecto</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <canvas id="petalsCanvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999999;"></canvas>
+
+<script>
+  const canvas = document.getElementById('petalsCanvas');
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const petals = Array.from({ length: 4 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height - canvas.height,
+    size: Math.random() * 8 + 10,
+    speedY: Math.random() * 0.2 + 0.2,
+    speedX: Math.random() * 0.7 - 0.3,
+    angle: Math.random() * 360
+  }));
+
+  function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'rgba(186, 60, 97, 0.6)';
+
+  petals.forEach(p => {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate((p.angle * Math.PI) / 300);
+
+    // DIBUJO DE PÉTALO CON PUNTA (Curvas de Bézier)
+    ctx.beginPath();
+    ctx.moveTo(0, -p.size); // Punta superior
+
+    // Curva del lado derecho hacia la punta inferior
+    ctx.bezierCurveTo(p.size * 0.7, -p.size * 0.3, p.size * 0.7, p.size * 0.3, 0, p.size);
+
+    // Curva del lado izquierdo de vuelta a la punta superior
+    ctx.bezierCurveTo(-p.size * 0.7, p.size * 0.3, -p.size * 0.7, -p.size * 0.3, 0, -p.size);
+
+    ctx.fill();
+    ctx.restore();
+
+    p.y += p.speedY;
+    p.x += Math.sin(p.y / 35) * 0.6;
+    p.angle += 0.4;
+
+    if (p.y > canvas.height + 20) {
+      p.y = -20;
+      p.x = Math.random() * canvas.width;
+    }
+  });
+
+  requestAnimationFrame(draw);
+}
+  draw();
+</script>
+  <app-root></app-root>
+  <script>
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      } else if (pageYOffset < 200 && link.getAttribute('href') === '#') {
+        link.classList.add('active'); // Mantiene "Inicio" marcado arriba de todo
+      }
+    });
+  });
+</script>
+</body>
+</html>
