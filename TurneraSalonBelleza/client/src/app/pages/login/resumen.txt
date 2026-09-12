@@ -1,0 +1,3 @@
+aca vamos a hacer lo mismo q inicio, osea crear los mismo archivos login.html login.ts etc etc, 
+
+ESTO ES PARA LA PANTALLA DEL LOGIN CUANDO TOQUE EL RESERVAR EL TURNO 11/09 "
