@@ -1,0 +1,123 @@
+.registro-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(239, 206, 211, 0.75), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(185, 71, 107, 0.35), transparent 40%),
+    rgba(87, 37, 53, 0.35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  z-index: 1001;
+}
+
+.registro-modal {
+  width: 400px;
+  background: var(--blanco);
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: var(--sombra-media);
+  position: relative;
+}
+
+.registro-modal h2 {
+  margin: 0;
+  text-align: center;
+  color: var(--bordo-texto);
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.registro-modal > p {
+  text-align: center;
+  color: var(--texto-suave);
+  margin: 10px 0 25px;
+}
+
+.registro-modal label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  color: var(--bordo-texto);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.registro-modal input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 12px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.registro-modal input:focus {
+  border-color: var(--fucsia-fuerte);
+}
+
+.registro-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--fucsia-fuerte), #C65A7A);
+  color: var(--blanco);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--sombra-suave);
+}
+
+.registro-btn:hover {
+  background: var(--fucsia-hover);
+}
+
+.registro-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: var(--texto-suave);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.registro-close:hover {
+  color: var(--fucsia-fuerte);
+}
+
+.login-text {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.login-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-left: 4px;
+  color: var(--fucsia-fuerte);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  color: var(--fucsia-hover);
+  text-decoration: underline;
+}

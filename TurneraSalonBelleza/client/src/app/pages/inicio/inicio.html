@@ -20,7 +20,7 @@
     </nav>
 
     <div class="nav-actions">
-      <button class="btn-primary btn-nav">
+      <button class="btn-primary btn-nav" (click)="abrirLogin()">
         <span>📅</span>
         Reservá tu turno
       </button>
@@ -62,7 +62,7 @@
       </p>
 
       <div class="hero-buttons">
-        <button class="btn-primary">
+        <button class="btn-primary" (click)="abrirLogin()">
           <span>📅</span>
           Reservá tu turno
         </button>
@@ -270,3 +270,14 @@
   </a>
 
 </div>
+<app-login
+  [abierto]="loginAbierto"
+  (cerrar)="loginAbierto = false"
+  (registrar)="abrirRegistro()">
+</app-login>
+
+<app-registro
+  *ngIf="registroAbierto"
+  (cerrar)="registroAbierto = false"
+  (volverLogin)="volverAlLogin()">
+</app-registro>

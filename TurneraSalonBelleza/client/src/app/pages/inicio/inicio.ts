@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Login } from '../login/login';
+import { Registro } from '../registro/registro';
 
 interface Servicio {
   id: number;
@@ -12,13 +14,34 @@ interface Servicio {
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, Login, Registro],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css'
 })
 export class Inicio {
+
+  loginAbierto = false;
+
+  registroAbierto = false;
+
+  abrirLogin() {
+  this.loginAbierto = true;
+}
+
+abrirRegistro() {
+  this.loginAbierto = false;
+  this.registroAbierto = true;
+}
+volverAlLogin() {
+  this.registroAbierto = false;
+  this.loginAbierto = true;
+}
+
+
   titulo = 'Salón de Belleza';
   servicioSeleccionado: Servicio | null = null;
+
+  
 
   servicios: Servicio[] = [
     { id: 1, nombre: 'Lifting y Maquillaje', categoria: 'Estética Facial', profesionales: 2, icono: '✨' },
@@ -26,13 +49,15 @@ export class Inicio {
     { id: 3, nombre: 'Peluquería y Peinados', categoria: 'Cabello', profesionales: 1, icono: '✂️' },
     { id: 4, nombre: 'Masajes', categoria: 'Bienestar', profesionales: 1, icono: '💆‍♀️' }
   ];
-
-  // La función tiene que estar ACÁ ADENTRO de la clase App
-  seleccionarServicio(servicio: Servicio) {
+      // La función tiene que estar acá adentro de la clase Inicio
+    seleccionarServicio(servicio: Servicio) {
     this.servicioSeleccionado = servicio;
   }
 
   volver() {
     this.servicioSeleccionado = null;
   }
+
+
+ 
 }

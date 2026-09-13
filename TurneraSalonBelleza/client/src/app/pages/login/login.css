@@ -1,0 +1,165 @@
+.login-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(239, 206, 211, 0.75), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(185, 71, 107, 0.35), transparent 40%),
+    rgba(87, 37, 53, 0.35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  z-index: 1000;
+}
+body:has(.login-overlay) {
+  overflow: hidden;
+}
+.login-modal {
+  width: 400px;
+  background: var(--blanco);
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: var(--sombra-media);
+  position: relative;
+}
+.login-modal h2 {
+  margin: 0;
+  text-align: center;
+  color: var(--bordo-texto);
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.login-modal > p {
+  text-align: center;
+  color: var(--texto-suave);
+  margin: 10px 0 25px;
+}
+.login-modal button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-modal .google-btn {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 12px;
+  background: var(--blanco);
+  color: var(--bordo-texto);
+  font-size: 15px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-modal .google-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.login-modal label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  color: var(--bordo-texto);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-modal input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 15px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 12px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.login-modal input:focus {
+  border-color: var(--fucsia-fuerte);
+}
+.login-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--fucsia-fuerte), #C65A7A);
+  color: var(--blanco);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--sombra-suave);
+}
+
+.login-btn:hover {
+  background: var(--fucsia-hover);
+}
+.login-modal > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.login-modal > div::before,
+.login-modal > div::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rosa-borde-btn);
+}
+
+.login-modal > div span {
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+.login-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: var(--texto-suave);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.login-close:hover {
+  color: var(--fucsia-fuerte);
+}
+.register-text {
+  margin-top: 22px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.register-link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-left: 4px;
+  color: var(--fucsia-fuerte);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.register-link:hover {
+  color: var(--fucsia-hover);
+  text-decoration: underline;
+}

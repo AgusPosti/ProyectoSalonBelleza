@@ -1,0 +1,37 @@
+<div class="login-overlay" *ngIf="abierto">
+
+  <div class="login-modal">
+
+    <button class="login-close" type="button" (click)="cerrarLogin()">×</button>
+
+    <h2>Iniciar sesión</h2>
+
+    <p>Reservá tu turno en Siempre Bella ♡</p>
+
+    <button type="button" class="google-btn">
+        <img src="google-g.png" alt="Google" class="google-icon">
+      Continuar con Google
+    </button>
+
+    <div>
+      <span>o</span>
+    </div>
+
+    <label>Correo electrónico</label>
+    <input type="email" placeholder="Tu correo">
+
+    <label>Contraseña</label>
+    <input type="password" placeholder="Tu contraseña">
+
+    <button type="button" class="login-btn">
+      Iniciar sesión
+    </button>
+
+    <p>
+      ¿No tenés cuenta?
+      <button type="button" class="register-link" (click)="abrirRegistro()">Registrate</button >
+    </p>
+
+  </div>
+
+</div>
