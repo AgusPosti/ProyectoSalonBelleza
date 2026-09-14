@@ -1,0 +1,430 @@
+/* PÁGINA CLIENTE */
+
+.cliente-page {
+  min-height: 100vh;
+  background: var(--rosa-fondo);
+  color: var(--bordo-texto);
+}
+
+
+/* NAVBAR */
+
+.cliente-navbar {
+  height: 78px;
+  padding: 0 7%;
+  background: var(--blanco);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--rosa-borde-btn);
+  box-shadow: var(--sombra-suave);
+}
+
+.cliente-logo {
+  width: 100px;
+  height: auto;
+}
+
+.cliente-user {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: var(--bordo-texto);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.cliente-user button {
+  border: none;
+  background: transparent;
+  color: var(--fucsia-fuerte);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cliente-user button:hover {
+  color: var(--fucsia-hover);
+}
+
+
+/* CONTENIDO */
+
+.cliente-content {
+  width: 86%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 65px 0 80px;
+}
+
+
+/* ENCABEZADO */
+
+.cliente-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.cliente-header h1 {
+  margin: 8px 0 10px;
+}
+
+.cliente-header p {
+  margin: 0 auto;
+  max-width: 600px;
+
+  color: var(--texto-suave);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+
+/* ACCIONES */
+
+.cliente-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+
+  margin-bottom: 45px;
+}
+
+.cliente-action-card {
+  background: var(--blanco);
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 24px;
+
+  padding: 35px;
+
+  text-align: center;
+
+  box-shadow: var(--sombra-suave);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cliente-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+.action-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--rosa-claro);
+  color: var(--fucsia-fuerte);
+
+  font-size: 27px;
+}
+
+.cliente-action-card h3 {
+  margin: 0 0 10px;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.cliente-action-card p {
+  margin: 0 auto 22px;
+
+  max-width: 350px;
+
+  color: var(--texto-suave);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* BOTONES */
+
+.cliente-action-card .btn-primary,
+.cliente-action-card .btn-secondary {
+  min-width: 170px;
+}
+
+
+/* PRÓXIMO TURNO */
+
+.proximo-turno {
+  background: var(--blanco);
+
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 24px;
+
+  padding: 35px;
+
+  margin-bottom: 45px;
+
+  box-shadow: var(--sombra-suave);
+}
+
+.turno-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.turno-header h2 {
+  margin: 5px 0 0;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.turno-estado {
+  padding: 8px 15px;
+
+  border-radius: 20px;
+
+  background: var(--verde-suave);
+  color: var(--bordo-texto);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* INFORMACIÓN DEL TURNO */
+
+.turno-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  padding: 25px 0;
+
+  border-top: 1px solid var(--rosa-borde-btn);
+  border-bottom: 1px solid var(--rosa-borde-btn);
+}
+
+.turno-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.turno-dato span {
+  color: var(--texto-claro);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.turno-dato strong {
+  color: var(--bordo-texto);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+
+/* BOTONES DEL TURNO */
+
+.turno-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+.btn-cancelar {
+  padding: 11px 20px;
+
+  border: 1px solid #e1b7c0;
+  border-radius: 10px;
+
+  background: transparent;
+  color: var(--fucsia-fuerte);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background: var(--rosa-claro);
+}
+
+
+/* HISTORIAL */
+
+.historial {
+  background: var(--blanco);
+
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 24px;
+
+  padding: 35px;
+
+  box-shadow: var(--sombra-suave);
+}
+
+.historial-header {
+  margin-bottom: 25px;
+}
+
+.historial-header h2 {
+  margin: 5px 0 0;
+
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+
+/* LISTA DE TURNOS */
+
+.historial-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.historial-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid var(--rosa-borde-btn);
+}
+
+.historial-item:last-child {
+  border-bottom: none;
+}
+
+.historial-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.historial-item strong {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.historial-item span {
+  color: var(--texto-suave);
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+}
+
+.historial-estado {
+  padding: 6px 12px;
+
+  border-radius: 15px;
+
+  background: var(--rosa-claro);
+  color: var(--fucsia-fuerte);
+
+  font-size: 11px !important;
+  font-weight: 600;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+  .cliente-navbar {
+    padding: 0 5%;
+  }
+
+  .cliente-content {
+    width: 90%;
+    padding-top: 45px;
+  }
+
+  .cliente-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .turno-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .cliente-navbar {
+    height: auto;
+    padding: 18px 5%;
+
+    gap: 15px;
+  }
+
+  .cliente-user {
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cliente-logo {
+    width: 120px;
+  }
+
+  .cliente-content {
+    padding: 40px 0 60px;
+  }
+
+  .cliente-action-card,
+  .proximo-turno,
+  .historial {
+    padding: 25px;
+  }
+
+  .turno-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .turno-info {
+    grid-template-columns: 1fr;
+  }
+
+  .turno-actions {
+    flex-direction: column;
+  }
+
+  .turno-actions button {
+    width: 100%;
+  }
+
+  .historial-item {
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+}

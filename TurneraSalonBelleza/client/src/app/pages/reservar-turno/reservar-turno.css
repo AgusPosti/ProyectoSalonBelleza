@@ -1,0 +1,385 @@
+.reservar-page {
+  min-height: 100vh;
+  background: var(--rosa-fondo);
+}
+
+
+/* NAVBAR */
+
+.reservar-navbar {
+  height: 78px;
+  padding: 0 6%;
+  background: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rosa-borde-btn);
+}
+
+.reservar-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.volver-btn {
+  border: none;
+  background: transparent;
+  color: var(--bordo-texto);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.volver-btn:hover {
+  color: var(--fucsia-fuerte);
+}
+
+
+/* CONTENIDO */
+
+.reservar-content {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 60px 25px 80px;
+}
+
+
+/* ENCABEZADO */
+
+.reservar-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reservar-header p {
+  color: var(--texto-suave);
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+
+/* TARJETA PRINCIPAL */
+
+.reservar-card {
+  background: var(--blanco);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--sombra-suave);
+}
+
+
+/* CADA PASO */
+
+.reservar-paso {
+  display: flex;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid #f0dfe2;
+}
+
+.reservar-paso:first-child {
+  padding-top: 0;
+}
+
+.reservar-paso:last-of-type {
+  border-bottom: none;
+}
+
+.paso-numero {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: var(--rosa-principal);
+  color: var(--bordo-texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.paso-contenido {
+  flex: 1;
+}
+
+.paso-contenido h2 {
+  margin: 0;
+  color: var(--bordo-texto);
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+}
+
+.paso-contenido p {
+  margin: 7px 0 20px;
+  color: var(--texto-suave);
+  font-size: 14px;
+}
+
+
+/* SERVICIOS */
+
+.servicios-reserva {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.servicio-opcion {
+  padding: 18px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 15px;
+  background: var(--blanco);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: 0.2s;
+}
+
+.servicio-opcion:hover {
+  border-color: var(--fucsia-fuerte);
+  transform: translateY(-2px);
+}
+
+.servicio-opcion.seleccionado {
+  border: 2px solid var(--fucsia-fuerte);
+  background: var(--rosa-claro);
+}
+
+.opcion-icono {
+  font-size: 22px;
+  color: var(--fucsia-fuerte);
+  margin-bottom: 4px;
+}
+
+.servicio-opcion strong {
+  color: var(--bordo-texto);
+  font-size: 15px;
+}
+
+.servicio-opcion span:last-child {
+  color: var(--texto-claro);
+  font-size: 13px;
+}
+
+
+/* PROFESIONAL */
+
+.reserva-select {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 12px;
+  background: var(--blanco);
+  color: var(--bordo-texto);
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.reserva-select:focus {
+  border-color: var(--fucsia-fuerte);
+}
+
+
+/* FECHA */
+
+.fecha-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.fecha-header strong {
+  color: var(--bordo-texto);
+  font-size: 16px;
+}
+
+.fecha-header button {
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 50%;
+  background: var(--blanco);
+  color: var(--bordo-texto);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.fecha-header button:hover {
+  background: var(--rosa-claro);
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.dias button {
+  padding: 12px 5px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 12px;
+  background: var(--blanco);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.dias button span {
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+.dias button strong {
+  color: var(--bordo-texto);
+  font-size: 17px;
+}
+
+.dias button:hover {
+  border-color: var(--fucsia-fuerte);
+}
+
+.dias .dia-seleccionado {
+  background: var(--fucsia-fuerte);
+  border-color: var(--fucsia-fuerte);
+}
+
+.dias .dia-seleccionado span,
+.dias .dia-seleccionado strong {
+  color: var(--blanco);
+}
+
+
+/* HORARIOS */
+
+.horarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.horarios button {
+  padding: 13px;
+  border: 1px solid var(--rosa-borde-btn);
+  border-radius: 11px;
+  background: var(--blanco);
+  color: var(--bordo-texto);
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.horarios button:hover {
+  border-color: var(--fucsia-fuerte);
+}
+
+.horarios .horario-seleccionado {
+  background: var(--fucsia-fuerte);
+  border-color: var(--fucsia-fuerte);
+  color: var(--blanco);
+}
+
+
+/* RESUMEN FINAL */
+
+.reservar-final {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #f0dfe2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.reservar-final div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reservar-final span {
+  color: var(--texto-claro);
+  font-size: 13px;
+}
+
+.reservar-final strong {
+  color: var(--bordo-texto);
+  font-size: 15px;
+}
+
+.reservar-final small {
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+  .reservar-content {
+    padding: 40px 15px 60px;
+  }
+
+  .reservar-card {
+    padding: 25px 20px;
+  }
+
+  .servicios-reserva {
+    grid-template-columns: 1fr;
+  }
+
+  .dias {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .horarios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reservar-final {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reservar-final .btn-primary {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .reservar-navbar {
+    padding: 0 20px;
+  }
+
+  .reservar-logo {
+    width: 105px;
+  }
+
+  .reservar-card {
+    border-radius: 18px;
+    padding: 22px 16px;
+  }
+
+  .reservar-paso {
+    gap: 12px;
+  }
+
+  .paso-numero {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 13px;
+  }
+
+}
