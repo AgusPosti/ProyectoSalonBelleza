@@ -12,251 +12,973 @@
     </div>
 
     <div class="admin-user">
-      <span>Panel administrativo</span>
-      <button type="button">Cerrar sesión</button>
+      <span>
+        Panel administrativo
+      </span>
+
+      <button type="button">
+        Cerrar sesión
+      </button>
     </div>
 
   </header>
 
 
-  <!-- CONTENIDO -->
-  <main class="admin-content">
+  <!-- CONTENIDO ADMIN -->
+  <div class="admin-layout">
 
-    <section class="admin-header">
-      <span class="sub-title-script">Siempre Bella</span>
+    <!-- MENÚ LATERAL -->
+    <aside class="admin-sidebar">
 
-      <h1 class="section-title">
-        Panel de administración
-      </h1>
-
-      <p>
-        Gestioná los turnos, profesionales, clientes y servicios del salón.
-      </p>
-    </section>
-
-
-    <!-- RESUMEN -->
-    <section class="admin-resumen">
-
-      <div class="resumen-card">
-        <span class="resumen-titulo">Turnos de hoy</span>
-        <strong>12</strong>
-        <span class="resumen-extra">3 pendientes</span>
-      </div>
-
-      <div class="resumen-card">
-        <span class="resumen-titulo">Clientes</span>
-        <strong>148</strong>
-        <span class="resumen-extra">Registradas</span>
-      </div>
-
-      <div class="resumen-card">
-        <span class="resumen-titulo">Profesionales</span>
-        <strong>6</strong>
-        <span class="resumen-extra">Activas</span>
-      </div>
-
-      <div class="resumen-card">
-        <span class="resumen-titulo">Servicios</span>
-        <strong>14</strong>
-        <span class="resumen-extra">Disponibles</span>
-      </div>
-
-    </section>
-
-
-    <!-- ACCIONES -->
-    <section class="admin-acciones">
-
-      <div class="admin-action-card">
-
-        <div class="action-icon">♡</div>
-
-        <h3>Turnos</h3>
-
-        <p>
-          Consultá y gestioná los turnos del salón.
-        </p>
-
-        <button type="button" class="btn-primary">
-          Ver turnos
-        </button>
-
+      <div class="sidebar-titulo">
+        Administración
       </div>
 
 
-      <div class="admin-action-card">
+      <!-- INICIO -->
+      <button
+        type="button"
+        class="sidebar-opcion"
+        [class.activa]="pestanaActual === 'inicio'"
+        (click)="cambiarPestana('inicio')"
+      >
+        <span class="sidebar-icono">
+          ♡
+        </span>
 
-        <div class="action-icon">♧</div>
-
-        <h3>Profesionales</h3>
-
-        <p>
-          Administrá las profesionales y sus servicios.
-        </p>
-
-        <button type="button" class="btn-secondary">
-          Ver profesionales
-        </button>
-
-      </div>
-
-
-      <div class="admin-action-card">
-
-        <div class="action-icon">◇</div>
-
-        <h3>Clientes</h3>
-
-        <p>
-          Consultá las clientas registradas en el salón.
-        </p>
-
-        <button type="button" class="btn-secondary">
-          Ver clientes
-        </button>
-
-      </div>
+        <span>
+          Inicio
+        </span>
+      </button>
 
 
-      <div class="admin-action-card">
+      <!-- TURNOS -->
+      <button
+        type="button"
+        class="sidebar-opcion"
+        [class.activa]="pestanaActual === 'turnos'"
+        (click)="cambiarPestana('turnos')"
+      >
+        <span class="sidebar-icono">
+          ◇
+        </span>
 
-        <div class="action-icon">✦</div>
-
-        <h3>Servicios</h3>
-
-        <p>
-          Gestioná los servicios disponibles para reservar.
-        </p>
-
-        <button type="button" class="btn-secondary">
-          Ver servicios
-        </button>
-
-      </div>
-
-    </section>
+        <span>
+          Turnos
+        </span>
+      </button>
 
 
-    <!-- TURNOS DE HOY -->
-    <section class="admin-turnos">
+      <!-- PROFESIONALES -->
+      <button
+        type="button"
+        class="sidebar-opcion"
+        [class.activa]="pestanaActual === 'profesionales'"
+        (click)="cambiarPestana('profesionales')"
+      >
+        <span class="sidebar-icono">
+          ♧
+        </span>
 
-      <div class="admin-section-header">
-
-        <div>
-          <span class="sub-title-script">Agenda</span>
-
-          <h2>Turnos de hoy</h2>
-        </div>
-
-        <button type="button" class="btn-secondary">
-          Ver todos
-        </button>
-
-      </div>
+        <span>
+          Profesionales
+        </span>
+      </button>
 
 
-      <div class="turnos-list">
+      <!-- CLIENTES -->
+      <button
+        type="button"
+        class="sidebar-opcion"
+        [class.activa]="pestanaActual === 'clientes'"
+        (click)="cambiarPestana('clientes')"
+      >
+        <span class="sidebar-icono">
+          ♡
+        </span>
 
-        <div class="turno-item">
+        <span>
+          Clientes
+        </span>
+      </button>
 
-          <div class="turno-hora">
-            <strong>10:00</strong>
-            <span>hs</span>
-          </div>
 
-          <div class="turno-cliente">
-            <strong>Lucía Fernández</strong>
-            <span>Manicure</span>
-          </div>
+      <!-- SERVICIOS -->
+      <button
+        type="button"
+        class="sidebar-opcion"
+        [class.activa]="pestanaActual === 'servicios'"
+        (click)="cambiarPestana('servicios')"
+      >
+        <span class="sidebar-icono">
+          ✦
+        </span>
 
-          <div class="turno-profesional">
-            <span>Profesional</span>
-            <strong>Camila</strong>
-          </div>
+        <span>
+          Servicios
+        </span>
+      </button>
 
-          <span class="turno-estado confirmado">
-            Confirmado
+    </aside>
+
+
+    <!-- CONTENIDO DE LAS PESTAÑAS -->
+    <main class="admin-content">
+
+
+      <!-- ==================== -->
+      <!-- INICIO -->
+      <!-- ==================== -->
+
+      <section
+        *ngIf="pestanaActual === 'inicio'"
+        class="admin-panel"
+      >
+
+        <section class="admin-header">
+
+          <span class="sub-title-script">
+            Siempre Bella
           </span>
 
-        </div>
+          <h1 class="section-title">
+            Panel de administración
+          </h1>
+
+          <p>
+            Gestioná los turnos, profesionales,
+            clientes y servicios del salón.
+          </p>
+
+        </section>
 
 
-        <div class="turno-item">
+        <!-- RESUMEN -->
 
-          <div class="turno-hora">
-            <strong>11:30</strong>
-            <span>hs</span>
+        <section class="admin-resumen">
+
+          <div class="resumen-card">
+
+            <span class="resumen-titulo">
+              Turnos de hoy
+            </span>
+
+            <strong>
+              12
+            </strong>
+
+            <span class="resumen-extra">
+              3 pendientes
+            </span>
+
           </div>
 
-          <div class="turno-cliente">
-            <strong>Martina López</strong>
-            <span>Lifting de pestañas</span>
+
+          <div class="resumen-card">
+
+            <span class="resumen-titulo">
+              Clientes
+            </span>
+
+            <strong>
+              148
+            </strong>
+
+            <span class="resumen-extra">
+              Registradas
+            </span>
+
           </div>
 
-          <div class="turno-profesional">
-            <span>Profesional</span>
-            <strong>Valentina</strong>
+
+          <div class="resumen-card">
+
+            <span class="resumen-titulo">
+              Profesionales
+            </span>
+
+            <strong>
+              6
+            </strong>
+
+            <span class="resumen-extra">
+              Activas
+            </span>
+
           </div>
 
-          <span class="turno-estado pendiente">
-            Pendiente
+
+          <div class="resumen-card">
+
+            <span class="resumen-titulo">
+              Servicios
+            </span>
+
+            <strong>
+              14
+            </strong>
+
+            <span class="resumen-extra">
+              Disponibles
+            </span>
+
+          </div>
+
+        </section>
+
+
+        <!-- TURNOS DE HOY -->
+
+        <section class="admin-turnos">
+
+          <div class="admin-section-header">
+
+            <div>
+
+              <span class="sub-title-script">
+                Agenda
+              </span>
+
+              <h2>
+                Turnos de hoy
+              </h2>
+
+            </div>
+
+            <button
+              type="button"
+              class="btn-secondary"
+              (click)="cambiarPestana('turnos')"
+            >
+              Ver todos
+            </button>
+
+          </div>
+
+
+          <div class="turnos-list">
+
+
+            <!-- TURNO 1 -->
+
+            <div class="turno-item">
+
+              <div class="turno-hora">
+
+                <strong>
+                  10:00
+                </strong>
+
+                <span>
+                  hs
+                </span>
+
+              </div>
+
+
+              <div class="turno-cliente">
+
+                <strong>
+                  Lucía Fernández
+                </strong>
+
+                <span>
+                  Manicure
+                </span>
+
+              </div>
+
+
+              <div class="turno-profesional">
+
+                <span>
+                  Profesional
+                </span>
+
+                <strong>
+                  Camila
+                </strong>
+
+              </div>
+
+
+              <span class="turno-estado confirmado">
+                Confirmado
+              </span>
+
+            </div>
+
+
+            <!-- TURNO 2 -->
+
+            <div class="turno-item">
+
+              <div class="turno-hora">
+
+                <strong>
+                  11:30
+                </strong>
+
+                <span>
+                  hs
+                </span>
+
+              </div>
+
+
+              <div class="turno-cliente">
+
+                <strong>
+                  Martina López
+                </strong>
+
+                <span>
+                  Lifting de pestañas
+                </span>
+
+              </div>
+
+
+              <div class="turno-profesional">
+
+                <span>
+                  Profesional
+                </span>
+
+                <strong>
+                  Carla
+                </strong>
+
+              </div>
+
+
+              <span class="turno-estado pendiente">
+                Pendiente
+              </span>
+
+            </div>
+
+
+            <!-- TURNO 3 -->
+
+            <div class="turno-item">
+
+              <div class="turno-hora">
+
+                <strong>
+                  15:30
+                </strong>
+
+                <span>
+                  hs
+                </span>
+
+              </div>
+
+
+              <div class="turno-cliente">
+
+                <strong>
+                  Sofía Martínez
+                </strong>
+
+                <span>
+                  Peluquería y peinado
+                </span>
+
+              </div>
+
+
+              <div class="turno-profesional">
+
+                <span>
+                  Profesional
+                </span>
+
+                <strong>
+                  Andrea
+                </strong>
+
+              </div>
+
+
+              <span class="turno-estado confirmado">
+                Confirmado
+              </span>
+
+            </div>
+
+
+            <!-- TURNO 4 -->
+
+            <div class="turno-item">
+
+              <div class="turno-hora">
+
+                <strong>
+                  17:00
+                </strong>
+
+                <span>
+                  hs
+                </span>
+
+              </div>
+
+
+              <div class="turno-cliente">
+
+                <strong>
+                  Agustina Pérez
+                </strong>
+
+                <span>
+                  Manicure y pedicure
+                </span>
+
+              </div>
+
+
+              <div class="turno-profesional">
+
+                <span>
+                  Profesional
+                </span>
+
+                <strong>
+                  Lali
+                </strong>
+
+              </div>
+
+
+              <span class="turno-estado pendiente">
+                Pendiente
+              </span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+
+      <!-- ==================== -->
+      <!-- TURNOS -->
+      <!-- ==================== -->
+
+      <section
+        *ngIf="pestanaActual === 'turnos'"
+        class="admin-panel"
+      >
+
+        <div class="panel-titulo">
+
+          <span class="sub-title-script">
+            Agenda
           </span>
 
+          <h1>
+            Turnos
+          </h1>
+
+          <p>
+            Consultá y gestioná los turnos del salón.
+          </p>
+
         </div>
 
 
-        <div class="turno-item">
+        <div class="panel-contenido">
 
-          <div class="turno-hora">
-            <strong>15:30</strong>
-            <span>hs</span>
+          <div class="tabla-header">
+
+            <strong>
+              Turnos registrados
+            </strong>
+
+            <button
+              type="button"
+              class="btn-primary"
+            >
+              + Nuevo turno
+            </button>
+
           </div>
 
-          <div class="turno-cliente">
-            <strong>Sofía Martínez</strong>
-            <span>Peluquería y peinado</span>
+
+          <div class="tabla-item">
+
+            <span>
+              10:00
+            </span>
+
+            <span>
+              Lucía Fernández
+            </span>
+
+            <span>
+              Manicure
+            </span>
+
+            <span>
+              Camila
+            </span>
+
+            <span class="turno-estado confirmado">
+              Confirmado
+            </span>
+
           </div>
 
-          <div class="turno-profesional">
-            <span>Profesional</span>
-            <strong>Camila</strong>
+
+          <div class="tabla-item">
+
+            <span>
+              11:30
+            </span>
+
+            <span>
+              Martina López
+            </span>
+
+            <span>
+              Lifting
+            </span>
+
+            <span>
+              Carla
+            </span>
+
+            <span class="turno-estado pendiente">
+              Pendiente
+            </span>
+
           </div>
 
-          <span class="turno-estado confirmado">
-            Confirmado
+
+          <div class="tabla-item">
+
+            <span>
+              15:30
+            </span>
+
+            <span>
+              Sofía Martínez
+            </span>
+
+            <span>
+              Peluquería
+            </span>
+
+            <span>
+              Andrea
+            </span>
+
+            <span class="turno-estado confirmado">
+              Confirmado
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==================== -->
+      <!-- PROFESIONALES -->
+      <!-- ==================== -->
+
+      <section
+        *ngIf="pestanaActual === 'profesionales'"
+        class="admin-panel"
+      >
+
+        <div class="panel-titulo">
+
+          <span class="sub-title-script">
+            Equipo
           </span>
 
+          <h1>
+            Profesionales
+          </h1>
+
+          <p>
+            Administrá las profesionales y los servicios que realizan.
+          </p>
+
         </div>
 
 
-        <div class="turno-item">
+        <div class="panel-contenido">
 
-          <div class="turno-hora">
-            <strong>17:00</strong>
-            <span>hs</span>
+          <div class="tabla-header">
+
+            <strong>
+              Profesionales registradas
+            </strong>
+
+            <button
+              type="button"
+              class="btn-primary"
+            >
+              + Agregar profesional
+            </button>
+
           </div>
 
-          <div class="turno-cliente">
-            <strong>Agustina Pérez</strong>
-            <span>Manicure y pedicure</span>
+
+          <div
+            class="profesional-item"
+            *ngFor="let profesional of profesionales"
+          >
+
+            <div class="profesional-datos">
+
+              <strong>
+                {{ profesional.nombre }}
+              </strong>
+
+              <span>
+                {{ profesional.servicios.join(' · ') }}
+              </span>
+
+            </div>
+
+
+            <div class="profesional-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
           </div>
 
-          <div class="turno-profesional">
-            <span>Profesional</span>
-            <strong>Julieta</strong>
-          </div>
+        </div>
 
-          <span class="turno-estado pendiente">
-            Pendiente
+      </section>
+
+
+      <!-- ==================== -->
+      <!-- CLIENTES -->
+      <!-- ==================== -->
+
+      <section
+        *ngIf="pestanaActual === 'clientes'"
+        class="admin-panel"
+      >
+
+        <div class="panel-titulo">
+
+          <span class="sub-title-script">
+            Clientes
           </span>
 
+          <h1>
+            Clientes
+          </h1>
+
+          <p>
+            Consultá las clientas registradas en el salón.
+          </p>
+
         </div>
 
-      </div>
 
-    </section>
+        <div class="panel-contenido">
 
-  </main>
+          <div class="tabla-header">
+
+            <strong>
+              Clientes registradas
+            </strong>
+
+            <button
+              type="button"
+              class="btn-secondary"
+            >
+              Buscar cliente
+            </button>
+
+          </div>
+
+
+          <div class="tabla-item">
+
+            <span>
+              Lucía Fernández
+            </span>
+
+            <span>
+              lucia@email.com
+            </span>
+
+            <span>
+              3 turnos
+            </span>
+
+            <span>
+              Activa
+            </span>
+
+          </div>
+
+
+          <div class="tabla-item">
+
+            <span>
+              Martina López
+            </span>
+
+            <span>
+              martina@email.com
+            </span>
+
+            <span>
+              5 turnos
+            </span>
+
+            <span>
+              Activa
+            </span>
+
+          </div>
+
+
+          <div class="tabla-item">
+
+            <span>
+              Sofía Martínez
+            </span>
+
+            <span>
+              sofia@email.com
+            </span>
+
+            <span>
+              2 turnos
+            </span>
+
+            <span>
+              Activa
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ==================== -->
+      <!-- SERVICIOS -->
+      <!-- ==================== -->
+
+      <section
+        *ngIf="pestanaActual === 'servicios'"
+        class="admin-panel"
+      >
+
+        <div class="panel-titulo">
+
+          <span class="sub-title-script">
+            Salón
+          </span>
+
+          <h1>
+            Servicios
+          </h1>
+
+          <p>
+            Gestioná los servicios disponibles para reservar.
+          </p>
+
+        </div>
+
+
+        <div class="panel-contenido">
+
+          <div class="tabla-header">
+
+            <strong>
+              Servicios disponibles
+            </strong>
+
+            <button
+              type="button"
+              class="btn-primary"
+            >
+              + Agregar servicio
+            </button>
+
+          </div>
+
+
+          <div class="servicio-admin-item">
+
+            <div>
+
+              <strong>
+                Peluquería y peinados
+              </strong>
+
+              <span>
+                Cabello
+              </span>
+
+            </div>
+
+
+            <div class="profesional-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="servicio-admin-item">
+
+            <div>
+
+              <strong>
+                Manicure y pedicure
+              </strong>
+
+              <span>
+                Uñas
+              </span>
+
+            </div>
+
+
+            <div class="profesional-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="servicio-admin-item">
+
+            <div>
+
+              <strong>
+                Lifting de pestañas
+              </strong>
+
+              <span>
+                Estética facial
+              </span>
+
+            </div>
+
+
+            <div class="profesional-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="servicio-admin-item">
+
+            <div>
+
+              <strong>
+                Masajes
+              </strong>
+
+              <span>
+                Bienestar
+              </span>
+
+            </div>
+
+
+            <div class="profesional-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
 
 </div>

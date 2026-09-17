@@ -1,0 +1,321 @@
+<div class="empleado-layout">
+
+  <!-- MENÚ LATERAL -->
+
+  <aside class="empleado-sidebar">
+
+<div class="empleado-logo">
+  <img src="logo-siemprebella.png" alt="Siempre Bella">
+</div>
+
+<div class="empleado-info">
+  <div class="empleado-avatar">
+    {{ empleado.nombre.charAt(0) }}
+  </div>
+
+  <strong>{{ empleado.nombre }}</strong>
+  <span>Empleado</span>
+</div>
+
+<nav class="empleado-menu">
+
+  <button
+    [class.activa]="pestanaActual === 'inicio'"
+    (click)="cambiarPestana('inicio')">
+    <span>Inicio</span>
+  </button>
+
+  <button
+    [class.activa]="pestanaActual === 'turnos'"
+    (click)="cambiarPestana('turnos')">
+    <span>Mis turnos</span>
+  </button>
+
+  <button
+    [class.activa]="pestanaActual === 'agenda'"
+    (click)="cambiarPestana('agenda')">
+    <span>Mi agenda</span>
+  </button>
+
+  <button
+    [class.activa]="pestanaActual === 'servicios'"
+    (click)="cambiarPestana('servicios')">
+    <span>Mis servicios</span>
+  </button>
+
+  <button
+    [class.activa]="pestanaActual === 'perfil'"
+    (click)="cambiarPestana('perfil')">
+    <span>Mi perfil</span>
+  </button>
+
+</nav>
+
+<button class="cerrar-sesion">
+  Cerrar sesión
+</button>
+
+
+  </aside>
+
+  <!-- CONTENIDO -->
+
+  <main class="empleado-content">
+
+
+<!-- INICIO -->
+<section *ngIf="pestanaActual === 'inicio'">
+
+  <div class="pagina-header">
+    <div>
+      <span class="subtitulo">Panel de empleado</span>
+      <h1>Hola, {{ empleado.nombre }}</h1>
+      <p>Consultá tus turnos, horarios y servicios.</p>
+    </div>
+  </div>
+
+
+  <div class="resumen-grid">
+
+    <div class="resumen-card">
+      <div>
+        <span>Turnos de hoy</span>
+        <strong>{{ turnos.length }}</strong>
+      </div>
+    </div>
+
+    <div class="resumen-card">
+      <div>
+        <span>Servicios</span>
+        <strong>{{ servicios.length }}</strong>
+      </div>
+    </div>
+
+    <div class="resumen-card">
+      <div>
+        <span>Próximo turno</span>
+        <strong>{{ turnos[0].hora }}</strong>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="seccion">
+
+    <div class="seccion-header">
+      <div>
+        <span class="subtitulo">Agenda de hoy</span>
+        <h2>Mis próximos turnos</h2>
+      </div>
+
+      <button
+        class="boton-secundario"
+        (click)="cambiarPestana('turnos')">
+        Ver todos
+      </button>
+    </div>
+
+
+    <div class="turnos-lista">
+
+      <div class="turno-card" *ngFor="let turno of turnos">
+
+        <div class="turno-hora">
+          {{ turno.hora }}
+        </div>
+
+        <div class="turno-info">
+          <strong>{{ turno.cliente }}</strong>
+          <span>{{ turno.servicio }}</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MIS TURNOS -->
+<section *ngIf="pestanaActual === 'turnos'">
+
+  <div class="pagina-header">
+    <div>
+      <span class="subtitulo">Agenda</span>
+      <h1>Mis turnos</h1>
+      <p>Estos son los turnos asignados a vos.</p>
+    </div>
+  </div>
+
+
+  <div class="tabla-contenedor">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Cliente</th>
+          <th>Servicio</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let turno of turnos">
+
+          <td>
+            <strong>{{ turno.hora }}</strong>
+          </td>
+
+          <td>
+            {{ turno.cliente }}
+          </td>
+
+          <td>
+            {{ turno.servicio }}
+          </td>
+
+          <td>
+            <span class="estado-confirmado">
+              Confirmado
+            </span>
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+
+<!-- MI AGENDA -->
+<section *ngIf="pestanaActual === 'agenda'">
+
+  <div class="pagina-header">
+    <div>
+      <span class="subtitulo">Horarios</span>
+      <h1>Mi agenda</h1>
+      <p>Consultá tus horarios de atención.</p>
+    </div>
+  </div>
+
+
+  <div class="agenda-grid">
+
+    <div class="dia-card">
+      <span>Lunes</span>
+      <strong>09:00 - 18:00</strong>
+    </div>
+
+    <div class="dia-card">
+      <span>Martes</span>
+      <strong>09:00 - 18:00</strong>
+    </div>
+
+    <div class="dia-card">
+      <span>Miércoles</span>
+      <strong>09:00 - 18:00</strong>
+    </div>
+
+    <div class="dia-card">
+      <span>Jueves</span>
+      <strong>09:00 - 18:00</strong>
+    </div>
+
+    <div class="dia-card">
+      <span>Viernes</span>
+      <strong>09:00 - 18:00</strong>
+    </div>
+
+    <div class="dia-card dia-descanso">
+      <span>Sábado</span>
+      <strong>Descanso</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MIS SERVICIOS -->
+<section *ngIf="pestanaActual === 'servicios'">
+
+  <div class="pagina-header">
+    <div>
+      <span class="subtitulo">Especialidades</span>
+      <h1>Mis servicios</h1>
+      <p>Servicios que tenés asignados.</p>
+    </div>
+  </div>
+
+
+  <div class="servicios-grid">
+
+    <div class="servicio-card" *ngFor="let servicio of servicios">
+
+      <div>
+        <h3>{{ servicio }}</h3>
+        <span>Servicio habilitado</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MI PERFIL -->
+<section *ngIf="pestanaActual === 'perfil'">
+
+  <div class="pagina-header">
+    <div>
+      <span class="subtitulo">Cuenta</span>
+      <h1>Mi perfil</h1>
+      <p>Información de tu perfil de empleado.</p>
+    </div>
+  </div>
+
+
+  <div class="perfil-card">
+
+    <div class="perfil-avatar">
+      {{ empleado.nombre.charAt(0) }}
+    </div>
+
+    <div class="perfil-datos">
+
+      <div class="dato">
+        <span>Nombre</span>
+        <strong>{{ empleado.nombre }}</strong>
+      </div>
+
+      <div class="dato">
+        <span>Especialidad</span>
+        <strong>{{ empleado.especialidad }}</strong>
+      </div>
+
+      <div class="dato">
+        <span>Rol</span>
+        <strong>Empleado</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+  </main>
+
+</div>

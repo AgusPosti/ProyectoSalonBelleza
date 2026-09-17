@@ -4,14 +4,13 @@
   <header class="navbar">
 
     <div class="navbar-brand">
-      <img 
-        src="logo-siemprebella.png" 
-        alt="Siempre Bella" 
+      <img
+        src="logo-siemprebella.png"
+        alt="Siempre Bella"
         class="nav-logo"
       >
     </div>
 
-    <!-- NAVBAR LINKS -->
     <nav class="nav-links">
       <a href="#" class="active">Inicio</a>
       <a href="#servicios">Servicios</a>
@@ -20,19 +19,49 @@
     </nav>
 
     <div class="nav-actions">
-      <button class="btn-primary btn-nav" (click)="abrirLogin()">
-        <span>📅</span>
+
+      <button
+        class="btn-primary btn-nav"
+        type="button"
+        (click)="abrirLogin()"
+      >
         Reservá tu turno
       </button>
 
-      <a 
+      <a
         href="https://www.instagram.com/siemprebella.peluqueria1/"
         target="_blank"
         class="ig-icon"
         title="Instagram"
       >
-        📷
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+          ></rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+          ></circle>
+
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+            fill="currentColor"
+            stroke="none"
+          ></circle>
+        </svg>
       </a>
+
     </div>
 
   </header>
@@ -41,20 +70,29 @@
   <!-- HERO -->
   <section class="hero-split">
 
-    <!-- TEXTO -->
     <div class="hero-content">
 
       <div class="brand-tagline">
         <span class="line"></span>
-        <span class="tagline-text">SIEMPRE BELLA</span>
+
+        <span class="tagline-text">
+          SIEMPRE BELLA
+        </span>
+
         <span class="line"></span>
       </div>
 
-      <span class="script-title">Tu momento</span>
+      <span class="script-title">
+        Tu momento
+      </span>
 
-      <h1 class="main-title">DE BELLEZA</h1>
+      <h1 class="main-title">
+        DE BELLEZA
+      </h1>
 
-      <p class="sub-title-script">más fácil ♡</p>
+      <p class="sub-title-script">
+        más fácil ♡
+      </p>
 
       <p class="description-text">
         Peluquería y estética en un espacio cálido y prolijo,
@@ -62,20 +100,28 @@
       </p>
 
       <div class="hero-buttons">
-        <button class="btn-primary" (click)="abrirLogin()">
-          <span>📅</span>
+
+        <button
+          class="btn-primary"
+          type="button"
+          (click)="abrirLogin()"
+        >
           Reservá tu turno
         </button>
 
-        <a href="#servicios" class="btn-secondary" style="text-decoration: none;">
+        <a
+          href="#servicios"
+          class="btn-secondary"
+          style="text-decoration: none;"
+        >
           Ver servicios →
         </a>
+
       </div>
 
     </div>
 
 
-    <!-- FOTO DEL SALÓN -->
     <div class="hero-image-wrapper">
 
       <img
@@ -96,169 +142,406 @@
   </section>
 
 
-  <!-- SECCIÓN SERVICIOS -->
-<section id="servicios" class="services-section">
+  <!-- SERVICIOS -->
+  <section
+    id="servicios"
+    class="services-section"
+  >
 
-  <div class="services-header">
-    <span class="sub-title-script">Lo que hacemos</span>
-    <h2 class="section-title">Nuestros servicios</h2>
-    <div class="divider-diamond">◇</div>
-    <p class="section-desc">
-      Cuidamos cada detalle para que salgas radiante. Estos son los servicios que ofrecemos en el salón.
-    </p>
-  </div>
+    <div class="services-header">
 
-  <div class="services-grid">
+      <span class="sub-title-script">
+        Lo que hacemos
+      </span>
 
-    <div class="service-card">
-      <div class="icon-circle">✂</div>
-      <h4>Peluquería y peinados</h4>
-      <p>Cortes, color, tratamientos y cuidado del cabello. Looks pensados para vos y tu estilo.</p>
-    </div>
+      <h2 class="section-title">
+        Nuestros servicios
+      </h2>
 
-    <div class="service-card">
-      <div class="icon-circle">✋</div>
-      <h4>Manicura</h4>
-      <p>Uñas prolijas y esmaltado impecable. Manos cuidadas que se notan y se lucen.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="icon-circle">🦶</div>
-      <h4>Pedicura</h4>
-      <p>Pies suaves y descansados. Un mimo completo para que camines liviana.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="icon-circle">✦</div>
-      <h4>Depilación definitiva</h4>
-      <p>Tecnología para una piel suave y duradera. Decile chau a la depilación de siempre.</p>
-    </div>
-
-    <div class="service-card">
-      <div class="icon-circle">👁</div>
-      <h4>Lifting de pestañas</h4>
-      <p>Pestañas curvadas y realzadas, con efecto natural. Tu mirada, más despierta.</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- SECCIÓN GALERÍA DE TRABAJOS -->
-<section id="galeria" class="galeria-seccion">
-
-  <div class="galeria-header">
-    <span class="sub-title-script">Resultados reales</span>
-    <h2 class="section-title">Nuestros Trabajos</h2>
-    <div class="divider-diamond">◇</div>
-    <p class="section-desc">
-      Mirá algunos de los cambios y cuidados que hacemos todos los días en el salón.
-    </p>
-  </div>
-
-  <div class="galeria-grid">
-
-    <div class="galeria-item">
-      <img src="https://picsum.photos/400/400?random=1" alt="Uñas Esculpidas">
-      <div class="galeria-overlay">
-        <span>Kapping + Nail Art ♡</span>
+      <div class="divider-diamond">
+        ◇
       </div>
+
+      <p class="section-desc">
+        Cuidamos cada detalle para que salgas radiante.
+        Estos son los servicios que ofrecemos en el salón.
+      </p>
+
     </div>
 
-    <div class="galeria-item">
-      <img src="https://picsum.photos/400/400?random=2" alt="Lifting Pestañas">
-      <div class="galeria-overlay">
-        <span>Lifting de Pestañas</span>
-      </div>
-    </div>
 
-    <div class="galeria-item">
-      <img src="https://picsum.photos/400/400?random=3" alt="Coloración Cabello">
-      <div class="galeria-overlay">
-        <span>Balayage & Nutrición</span>
-      </div>
-    </div>
+    <div class="services-grid">
 
-    <div class="galeria-item">
-      <img src="https://picsum.photos/400/400?random=4" alt="Perfilado Cejas">
-      <div class="galeria-overlay">
-        <span>Perfilado + Laminado</span>
-      </div>
-    </div>
+      <!-- SERVICIO 1 -->
+      <div class="service-card">
 
-  </div>
-
-</section>
-
-<!-- SECCIÓN CONTACTO -->
-<section id="contacto" class="contacto-seccion">
-
-  <div class="contacto-header">
-    <span class="sub-title-script">Donde encontrarnos</span>
-    <h2 class="section-title">Contacto & Ubicación</h2>
-    <div class="divider-diamond">◇</div>
-    <p class="section-desc">
-      Acércate a nuestro salón o dejanos tu consulta. ¡Te esperamos para brindarte la mejor atención!
-    </p>
-  </div>
-
-  <div class="contacto-grid">
-
-    <!-- COLUMNA IZQUIERDA: INFORMACIÓN Y HORARIOS -->
-    <div class="contacto-info-card">
-
-      <div class="info-item">
-        <div class="info-icon">📍</div>
-        <div>
-          <h4>Dirección</h4>
-          <p>La Rioja 3517, Mar del Plata</p>
-          <small>Zona Centro</small>
+        <div class="icon-circle">
+          ✂
         </div>
+
+        <h4>
+          Peluquería y peinados
+        </h4>
+
+        <p>
+          Cortes, color, tratamientos y cuidado del cabello.
+          Looks pensados para vos y tu estilo.
+        </p>
+
       </div>
 
-      <div class="info-item">
-        <div class="info-icon">⏰</div>
-        <div>
-          <h4>Horarios de atención</h4>
-          <p>Lunes a Sábados: 09:00 - 20:00 hs</p>
-          <small>Domingos y feriados: Cerrado</small>
+
+      <!-- SERVICIO 2 -->
+      <div class="service-card">
+
+        <div class="icon-circle">
+          ♡
         </div>
+
+        <h4>
+          Manicura
+        </h4>
+
+        <p>
+          Uñas prolijas y esmaltado impecable.
+          Manos cuidadas que se notan y se lucen.
+        </p>
+
       </div>
 
-      <div class="info-item">
-        <div class="info-icon">📱</div>
-        <div>
-          <h4>Turnos y Consultas</h4>
-          <p>+54 9 11 1234-5678</p>
-          <small>Atención inmediata vía WhatsApp</small>
+
+      <!-- SERVICIO 3 -->
+      <div class="service-card">
+
+        <div class="icon-circle">
+          ♡
         </div>
+
+        <h4>
+          Pedicura
+        </h4>
+
+        <p>
+          Pies suaves y descansados.
+          Un mimo completo para que camines liviana.
+        </p>
+
       </div>
 
-      <div class="redes-sociales">
-        <span>Seguinos en nuestras redes</span>
-        <div class="redes-links">
-          <a href="https://www.instagram.com/siemprebella.peluqueria1/" target="_blank" class="social-btn">📷 Instagram</a>
+
+      <!-- SERVICIO 4 -->
+      <div class="service-card">
+
+        <div class="icon-circle">
+          ✦
         </div>
+
+        <h4>
+          Depilación definitiva
+        </h4>
+
+        <p>
+          Tecnología para una piel suave y duradera.
+          Decile chau a la depilación de siempre.
+        </p>
+
+      </div>
+
+
+      <!-- SERVICIO 5 -->
+      <div class="service-card">
+
+        <div class="icon-circle">
+          ✦
+        </div>
+
+        <h4>
+          Lifting de pestañas
+        </h4>
+
+        <p>
+          Pestañas curvadas y realzadas, con efecto natural.
+          Tu mirada, más despierta.
+        </p>
+
       </div>
 
     </div>
 
-    <!-- COLUMNA DERECHA: MAPA DE GOOGLE MAPS -->
-<div class="mapa-wrapper">
-  <!-- Pegá acá tu iframe copiado de Google Maps -->
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072.998074482072!2d-57.56462026898634!3d-38.01219332267783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dea2ef726107%3A0xffea287aa3141b1!2sLa%20Rioja%203517%2C%20B7602BSO%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1789076986623!5m2!1ses!2sar" 
-  width="600" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="strict-origin-when-cross-origin">
-</iframe></div>
+  </section>
 
-  </div>
 
-</section>
+  <!-- GALERÍA -->
+  <section
+    id="galeria"
+    class="galeria-seccion"
+  >
+
+    <div class="galeria-header">
+
+      <span class="sub-title-script">
+        Resultados reales
+      </span>
+
+      <h2 class="section-title">
+        Nuestros Trabajos
+      </h2>
+
+      <div class="divider-diamond">
+        ◇
+      </div>
+
+      <p class="section-desc">
+        Mirá algunos de los cambios y cuidados que hacemos
+        todos los días en el salón.
+      </p>
+
+    </div>
+
+
+    <div class="galeria-grid">
+
+      <div class="galeria-item">
+
+        <img
+          src="https://picsum.photos/400/400?random=1"
+          alt="Uñas esculpidas"
+        >
+
+        <div class="galeria-overlay">
+          <span>
+            Kapping + Nail Art ♡
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="galeria-item">
+
+        <img
+          src="https://picsum.photos/400/400?random=2"
+          alt="Lifting de pestañas"
+        >
+
+        <div class="galeria-overlay">
+          <span>
+            Lifting de Pestañas
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="galeria-item">
+
+        <img
+          src="https://picsum.photos/400/400?random=3"
+          alt="Coloración de cabello"
+        >
+
+        <div class="galeria-overlay">
+          <span>
+            Balayage & Nutrición
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="galeria-item">
+
+        <img
+          src="https://picsum.photos/400/400?random=4"
+          alt="Perfilado de cejas"
+        >
+
+        <div class="galeria-overlay">
+          <span>
+            Perfilado + Laminado
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACTO -->
+  <section
+    id="contacto"
+    class="contacto-seccion"
+  >
+
+    <div class="contacto-header">
+
+      <span class="sub-title-script">
+        Donde encontrarnos
+      </span>
+
+      <h2 class="section-title">
+        Contacto & Ubicación
+      </h2>
+
+      <div class="divider-diamond">
+        ◇
+      </div>
+
+      <p class="section-desc">
+        Acercate a nuestro salón o dejanos tu consulta.
+        Te esperamos para brindarte la mejor atención.
+      </p>
+
+    </div>
+
+
+    <div class="contacto-grid">
+
+
+      <!-- INFORMACIÓN -->
+      <div class="contacto-info-card">
+
+        <div class="contacto-bloque">
+
+          <span class="contacto-label">
+            DIRECCIÓN
+          </span>
+
+          <h4>
+            Encontranos en el salón
+          </h4>
+
+          <p>
+            La Rioja 3517, Mar del Plata
+          </p>
+
+          <small>
+            Zona Centro
+          </small>
+
+        </div>
+
+
+        <div class="contacto-linea"></div>
+
+
+        <div class="contacto-bloque">
+
+          <span class="contacto-label">
+            HORARIOS
+          </span>
+
+          <h4>
+            Horarios de atención
+          </h4>
+
+          <p>
+            Lunes a Sábados: 09:00 - 20:00 hs
+          </p>
+
+          <small>
+            Domingos y feriados: Cerrado
+          </small>
+
+        </div>
+
+
+        <div class="contacto-linea"></div>
+
+
+        <div class="contacto-bloque">
+
+          <span class="contacto-label">
+            TURNOS Y CONSULTAS
+          </span>
+
+          <h4>
+            Estamos para ayudarte
+          </h4>
+
+          <p>
+            +54 9 11 1234-5678
+          </p>
+
+          <small>
+            Atención inmediata vía WhatsApp
+          </small>
+
+        </div>
+
+
+        <div class="contacto-linea"></div>
+
+
+        <div class="contacto-redes">
+
+          <span class="contacto-label">
+            REDES SOCIALES
+          </span>
+
+          <a
+            href="https://www.instagram.com/siemprebella.peluqueria1/"
+            target="_blank"
+            class="instagram-link"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+              ></rect>
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              ></circle>
+
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              ></circle>
+            </svg>
+
+            Instagram
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- MAPA -->
+      <div class="mapa-wrapper">
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3072.998074482072!2d-57.56462026898634!3d-38.01219332267783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9584dea2ef726107%3A0xffea287aa3141b1!2sLa%20Rioja%203517%2C%20B7602BSO%20Mar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1789076986623!5m2!1ses!2sar"
+          width="600"
+          height="450"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- WHATSAPP -->
   <a
     href="https://wa.me/123456789"
@@ -266,18 +549,24 @@
     class="whatsapp-float"
     title="Contactar por WhatsApp"
   >
-    💬
+    WhatsApp
   </a>
 
+
 </div>
+
+
+<!-- LOGIN -->
 <app-login
   [abierto]="loginAbierto"
   (cerrar)="loginAbierto = false"
-  (registrar)="abrirRegistro()">
-</app-login>
+  (registrar)="abrirRegistro()"
+></app-login>
 
+
+<!-- REGISTRO -->
 <app-registro
   *ngIf="registroAbierto"
   (cerrar)="registroAbierto = false"
-  (volverLogin)="volverAlLogin()">
-</app-registro>
+  (volverLogin)="volverAlLogin()"
+></app-registro>
