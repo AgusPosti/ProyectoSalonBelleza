@@ -1,0 +1,6 @@
+@PeluqueriaAPI_HostAddress = http://localhost:5186
+
+GET {{PeluqueriaAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
